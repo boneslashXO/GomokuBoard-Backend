@@ -12,16 +12,10 @@ defmodule GomokuBoardBackendWeb.AIGameController do
         # Handle successful output
         IO.puts("Engine output: #{output}")
 
-        if output == "OK" do
-          IO.put("All is well cooked and done, yay")
-        end
-
         GomokuBoardBackendWeb.Endpoint.broadcast("game:lobby", "engine_output", %{
           id: id,
           output: output
         })
-
-        handle_in()
 
       {:error, reason} ->
         # Handle error
