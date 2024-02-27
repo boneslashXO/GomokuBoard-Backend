@@ -8,7 +8,7 @@
 import Config
 
 config :gomoku_board_backend,
-  #ecto_repos: [GomokuBoardBackend.Repo],
+  # ecto_repos: [GomokuBoardBackend.Repo],
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint

@@ -1,7 +1,7 @@
 import Config
 
 # Configure your database
-#config :gomoku_board_backend, GomokuBoardBackend.Repo,
+# config :gomoku_board_backend, GomokuBoardBackend.Repo,
 #  username: "postgres",
 #  password: "postgres",
 #  hostname: "localhost",
