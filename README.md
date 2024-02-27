@@ -1,6 +1,6 @@
 # Gomoku board project
 
-Hello welcome, this is gomoku board project - made in Elixir as backend and with the huge help of ChatGPT which makeseverything faster.
+Hello welcome, this is gomoku board project - made in Elixir as backend and with the huge help of ChatGPT which makes everything faster.
 
 # Purpose
 
