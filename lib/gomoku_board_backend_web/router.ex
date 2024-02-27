@@ -27,9 +27,7 @@ defmodule GomokuBoardBackendWeb.Router do
     get "/", TestController, :index
 
     post "/start", AIGameController, :create
-
   end
-
 
   # Other scopes may use custom stacks.
   # scope "/api", GomokuBoardBackendWeb do

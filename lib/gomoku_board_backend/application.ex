@@ -18,12 +18,12 @@ defmodule GomokuBoardBackend.Application do
       # {GomokuBoardBackend.Worker, arg},
       # Start to serve requests, typically the last entry
       GomokuBoardBackendWeb.Endpoint
-     ]
+    ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: GomokuBoardBackend.Supervisor]
-    Supervisor.start_link(children,opts)
+    Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
