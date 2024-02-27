@@ -7,23 +7,18 @@ defmodule GomokuBoardBackend.Application do
 
   @impl true
   def start(_type, _args) do
-    #children = [
-    #  GomokuBoardBackendWeb.Telemetry,
-    #  GomokuBoardBackend.Repo,
-    #  {DNSCluster, query: Application.get_env(:gomoku_board_backend, :dns_cluster_query) || :ignore},
-     #  {Phoenix.PubSub, name: GomokuBoardBackend.PubSub},
+    children = [
+      #  GomokuBoardBackendWeb.Telemetry,
+      #  GomokuBoardBackend.Repo,
+      #  {DNSCluster, query: Application.get_env(:gomoku_board_backend, :dns_cluster_query) || :ignore},
+      {Phoenix.PubSub, name: GomokuBoardBackend.PubSub},
       # Start the Finch HTTP client for sending emails
-    #  {Finch, name: GomokuBoardBackend.Finch},
+      #  {Finch, name: GomokuBoardBackend.Finch},
       # Start a worker by calling: GomokuBoardBackend.Worker.start_link(arg)
       # {GomokuBoardBackend.Worker, arg},
       # Start to serve requests, typically the last entry
-    #  GomokuBoardBackendWeb.Endpoint
-    # ]
-
-    children = [
-      # Uncomment or add this line to start the Endpoint
       GomokuBoardBackendWeb.Endpoint
-    ]
+     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
