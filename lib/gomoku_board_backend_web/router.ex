@@ -20,6 +20,17 @@ defmodule GomokuBoardBackendWeb.Router do
     get "/", PageController, :home
   end
 
+  scope "/api", GomokuBoardBackendWeb do
+    pipe_through :api
+
+    # Add a test GET route
+    get "/", TestController, :index
+
+    post "/start", AIGameController, :create
+
+  end
+
+
   # Other scopes may use custom stacks.
   # scope "/api", GomokuBoardBackendWeb do
   #   pipe_through :api
