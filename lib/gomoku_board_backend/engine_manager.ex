@@ -36,6 +36,7 @@ defmodule GomokuBoardBackend.EngineManager do
 
   defp broadcast_engine_output(data) do
     # Parse or transform data as needed
+    IO.puts(data);
     parsed_data = String.trim(data)
 
     # Broadcast the data to the channel
