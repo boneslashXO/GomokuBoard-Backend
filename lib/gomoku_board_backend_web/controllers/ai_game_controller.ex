@@ -1,8 +1,6 @@
 defmodule GomokuBoardBackendWeb.AIGameController do
   use GomokuBoardBackendWeb, :controller
 
-  require Logger
-
   def create(conn, _params) do
     engine_path = System.get_env("ENGINE_PATH")
     IO.puts(engine_path);
@@ -15,7 +13,7 @@ defmodule GomokuBoardBackendWeb.AIGameController do
         :timer.sleep(1000) # Pause for 1 second (adjust as needed)
         case System.cmd(engine_path, ["info rule 1\nSTART 15\n"]) do
           {:ok, output} ->
-            Logger.info("Command sent to engine successfully.")
+            #Logger.info("Command sent to engine successfully.")
             IO.puts("Engine output: #{output}")
             case String.split(output, "\n") do
               [last_message | _] when last_message == "OK" ->
@@ -25,12 +23,12 @@ defmodule GomokuBoardBackendWeb.AIGameController do
             end
 
           {:error, reason} ->
-            Logger.error("Error sending command to engine: #{reason}")
+            #Logger.error("Error sending command to engine: #{reason}")
             send_resp(conn, 500, "Error executing engine command")
         end
 
       {:error, startup_reason} ->
-        Logger.error("Error starting engine: #{startup_reason}")
+        #Logger.error("Error starting engine: #{startup_reason}")
         send_resp(conn, 500, "Error starting engine")
     end
   end
