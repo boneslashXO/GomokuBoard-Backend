@@ -3,7 +3,10 @@ defmodule GomokuBoardBackendWeb.UserSocket do
 
   channel "AIgame:lobby", GomokuBoardBackendWeb.AIGameChannel
 
-  def id(_socket), do: nil
+  def connect(_params, socket) do
+    {:ok, socket}
+  end
 
+  def id(_socket), do: nil
   # Other socket definitions...
 end

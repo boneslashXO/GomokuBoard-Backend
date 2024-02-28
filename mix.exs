@@ -24,7 +24,7 @@ defmodule GomokuBoardBackend.MixProject do
   end
 
   # Specifies which paths to compile per environment.
-  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  #defp elixirc_paths(:test), do: ["lib", "test/support"]
   defp elixirc_paths(_), do: ["lib"]
 
   # Specifies your project dependencies.
@@ -34,6 +34,7 @@ defmodule GomokuBoardBackend.MixProject do
     [
       {:phoenix, "~> 1.7.11"},
       {:phoenix_ecto, "~> 4.4"},
+      {:cors_plug, "~> 2.0"},
       # {:ecto_sql, "~> 3.10"},
       # {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 4.0"},
