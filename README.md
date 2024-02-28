@@ -1,18 +1,8 @@
-# GomokuBoardBackend
+# Gomoku board project
 
-To start your Phoenix server:
+Hello welcome, this is gomoku board project - made in Elixir as backend and with the huge help of ChatGPT which makes everything faster.
 
-  * Run `mix setup` to install and setup dependencies
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+# Purpose
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+Main purpose is to send the messages to engine, process them and receive them back in the correct format for the frontend, just like that.
+  
