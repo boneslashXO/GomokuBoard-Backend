@@ -5,18 +5,19 @@ defmodule GomokuBoardBackendWeb.AIGameChannel do
     {:ok, socket}
   end
 
-  def handle_in("engine_output", %{"id" => id, "output" => outpu} , socket) do
-    Logger.info("Received engine output for ID: #{id}")
+def handle_in("start_ai", %{"command" => command} = message, socket) do
+  GomokuBoardBackend.EngineManager.start_engine_and_setup_board(command)
+  {:noreply, socket}
+end
 
-    if output == "OK" do
-        IO.put("All is well cooked and done, yay")
-    end
-    # Handle incoming messages from the engine
-    {:noreply, socket}
-  end
+def handle_in("analyze_position", %{"command" => command} = message, socket) do
+  GomokuBoardBackend.EngineManager.analyse(command)
+  {:noreply, socket}
+end
 
-  def handle_in("make_move", %{"move" => move} = payload, socket) do
-    # Handle incoming move event
-    {:noreply, socket}
-  end
+def handle_in("stop_ai", %{"command" => command} = message, socket) do
+  GomokuBoardBackend.EngineManager.stop_engine(command)
+  {:noreply, socket}
+end
+
 end

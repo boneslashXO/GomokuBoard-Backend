@@ -11,6 +11,7 @@ defmodule GomokuBoardBackend.Application do
       #  GomokuBoardBackendWeb.Telemetry,
       #  GomokuBoardBackend.Repo,
       #  {DNSCluster, query: Application.get_env(:gomoku_board_backend, :dns_cluster_query) || :ignore},
+      {GomokuBoardBackend.EngineManager, []},
       {Phoenix.PubSub, name: GomokuBoardBackend.PubSub},
       # Start the Finch HTTP client for sending emails
       #  {Finch, name: GomokuBoardBackend.Finch},

@@ -1,6 +1,9 @@
 defmodule GomokuBoardBackendWeb.Router do
   use GomokuBoardBackendWeb, :router
 
+  import Phoenix.Router
+
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -25,8 +28,6 @@ defmodule GomokuBoardBackendWeb.Router do
 
     # Add a test GET route
     get "/", TestController, :index
-
-    post "/start", AIGameController, :create
   end
 
   # Other scopes may use custom stacks.

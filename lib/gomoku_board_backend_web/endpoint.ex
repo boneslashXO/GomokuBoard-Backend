@@ -15,6 +15,8 @@ defmodule GomokuBoardBackendWeb.Endpoint do
     websocket: [connect_info: [session: @session_options]],
     longpoll: [connect_info: [session: @session_options]]
 
+  socket "/socket", GomokuBoardBackendWeb.UserSocket
+
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phx.digest
@@ -24,6 +26,8 @@ defmodule GomokuBoardBackendWeb.Endpoint do
     from: :gomoku_board_backend,
     gzip: false,
     only: GomokuBoardBackendWeb.static_paths()
+
+  plug CORSPlug, origin: ["http://localhost:5173"] # Adjust the origin to match your client's address
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
