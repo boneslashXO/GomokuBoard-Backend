@@ -5,14 +5,19 @@ defmodule GomokuBoardBackendWeb.AIGameChannel do
     {:ok, socket}
   end
 
-  def handle_in("start_game", _message, socket) do
-    GomokuBoardBackend.EngineManager.start_engine_and_setup_board("START 15\n")
-    {:noreply, socket}
-  end
+def handle_in("start_ai", %{"command" => command} = message, socket) do
+  GomokuBoardBackend.EngineManager.start_engine_and_setup_board(command)
+  {:noreply, socket}
+end
 
-  def handle_in("send_something", %{"content" => content}, socket) do
-    # EngineManager.start_engine_and_setup_board("START 15\n")
-    IO.puts("Message received: #{content}")
-    {:noreply, socket}
-  end
+def handle_in("analyze_position", %{"command" => command} = message, socket) do
+  GomokuBoardBackend.EngineManager.analyse(command)
+  {:noreply, socket}
+end
+
+def handle_in("stop_ai", %{"command" => command} = message, socket) do
+  GomokuBoardBackend.EngineManager.stop_engine(command)
+  {:noreply, socket}
+end
+
 end
